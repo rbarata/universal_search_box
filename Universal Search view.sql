@@ -1,5 +1,5 @@
 CREATE OR REPLACE VIEW v_universal_search_app500 AS
-SELECT entry_text, entry_target 
+SELECT 'Page: '||entry_text AS entry_text, entry_target 
 FROM apex_application_list_entries 
 WHERE 
     list_name='Desktop Navigation Menu' 
