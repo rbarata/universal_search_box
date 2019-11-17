@@ -1,5 +1,5 @@
 CREATE OR REPLACE VIEW v_universal_search_app500 AS
-SELECT 'Page: '||entry_text AS entry_text, entry_target 
+SELECT entry_text, entry_target 
 FROM apex_application_list_entries 
 WHERE 
     list_name='Desktop Navigation Menu' 
@@ -22,7 +22,7 @@ FROM departments
 UNION ALL
 
 SELECT 
-    'Employee: '||first_name||' '||last_name,
+    'Employee: '||first_name||' '||last_name||' ('||employee_id||')',
     'f?p=&'||'APP_ID.:10:&'||'SESSION.::&'||'DEBUG.:RP,10:P10_EMPLOYEE_ID:'||employee_id
 FROM employees
 
